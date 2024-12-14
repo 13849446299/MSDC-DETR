@@ -219,7 +219,7 @@ class EMA(nn.Module):
         return (group_x * weights.sigmoid()).reshape(b, c, h, w)
 ```
 
-## 5 Datasets
+## 5. Datasets
 
 ### 5.1 Download Links
 - **VisDrone**: [https://github.com/VisDrone/VisDrone-Dataset](https://github.com/VisDrone/VisDrone-Dataset)
@@ -231,7 +231,7 @@ class EMA(nn.Module):
 
 The **UAVDT** dataset provides 40,735 high-quality image resources, with the training set containing 24,143 images and the test set containing 16,592 images. The images in this dataset are primarily captured by UAVs in urban environments, with a resolution of approximately 1024×540 pixels. The annotated objects in the dataset are divided into three categories: car, bus, and truck, offering extensive data support for object detection and recognition research in UAV vision tasks.
 
-## 6 Build the configuration file for your custom training set and the model configuration file
+## 6. Build the configuration file for your custom training set and the model configuration file
 
 ### 5.1 Dataset configuration file
 
