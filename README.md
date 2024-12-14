@@ -233,7 +233,7 @@ The **UAVDT** dataset provides 40,735 high-quality image resources, with the tra
 
 ## 6. Build the configuration file for your custom training set and the model configuration file
 
-### 5.1 Dataset configuration file
+### 6.1 Dataset configuration file
 
 ```python
 # Parameters
@@ -284,7 +284,7 @@ head:
   - [[22, 25, 28], 1, RTDETRDecoder, [nc, 256, 300, 4, 8, 3]]  # Detect(P3, P4, P5)
 ```
 
-### 5.1 Model configuration file
+### 6.2 Model configuration file
 
 ```python
 # Ultralytics YOLO 🚀, AGPL-3.0 license
@@ -315,3 +315,28 @@ names:
   8: bus
   9: motor
 ```
+## 7. Additional relevant details
+
+The model configuration file for the ablation experiment is located in the following file:
+
+```bash
+MSDC-DETR/ultralytics/cfg/models/my_models
+```
+
+Training hyperparameter settings
+
+```bash
+epochs：   150        # (int) number of epochs to train for
+batch：    6          # (int) number of images per batch (-1 for AutoBatch)
+workers:   4          # (int) number of worker threads for data loading (per RANK if DDP)
+lr0:       0.0001     # (float) initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
+lrf:       1          # (float) final learning rate (lr0 * lrf)
+weight_decay:      0.0001     # (float) optimizer weight decay 5e-4
+warmup_epochs:     2000       # (float) warmup epochs (fractions ok)
+warmup_momentum:   0.8        # (float) warmup initial momentum
+warmup_bias_lr:    0.1        # (float) warmup initial bias lr
+optimizer:         AdamW      # (str) optimizer to use, choices=[SGD, Adam, Adamax, AdamW, NAdam, RAdam, RMSProp, auto]
+```
+
+
+
