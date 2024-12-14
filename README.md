@@ -236,6 +236,38 @@ The **UAVDT** dataset provides 40,735 high-quality image resources, with the tra
 ### 6.1 Dataset configuration file
 
 ```python
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# VisDrone2019-DET dataset https://github.com/VisDrone/VisDrone-Dataset by Tianjin University
+# Example usage: yolo train data=VisDrone.yaml
+# parent
+# ├── ultralytics
+# └── datasets
+#     └── VisDrone  ← downloads here (2.3 GB)
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: /root/autodl-tmp/VisDrone # dataset root dir
+train: VisDrone2019-DET-train  # train images (relative to 'path')  6471 images
+val: VisDrone2019-DET-val  # val images (relative to 'path')  548 images
+test: VisDrone2019-DET-test-dev
+# number of classes
+nc: 10
+
+# Classes
+names:
+  0: pedestrian
+  1: people
+  2: bicycle
+  3: car
+  4: van
+  5: truck
+  6: tricycle
+  7: awning-tricycle
+  8: bus
+  9: motor
+```
+
+### 6.2 Model configuration file
+
+```python
 # Parameters
 nc: 10  # number of classes
 scales: # model compound scaling constants, i.e. 'model=yolov8n-cls.yaml' will call yolov8-cls.yaml with scale 'n'
@@ -282,38 +314,6 @@ head:
   - [-1, 3, RepC3, [256, 0.5]]  # F5 (28), pan_blocks.1
 
   - [[22, 25, 28], 1, RTDETRDecoder, [nc, 256, 300, 4, 8, 3]]  # Detect(P3, P4, P5)
-```
-
-### 6.2 Model configuration file
-
-```python
-# Ultralytics YOLO 🚀, AGPL-3.0 license
-# VisDrone2019-DET dataset https://github.com/VisDrone/VisDrone-Dataset by Tianjin University
-# Example usage: yolo train data=VisDrone.yaml
-# parent
-# ├── ultralytics
-# └── datasets
-#     └── VisDrone  ← downloads here (2.3 GB)
-# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
-path: /root/autodl-tmp/VisDrone # dataset root dir
-train: VisDrone2019-DET-train  # train images (relative to 'path')  6471 images
-val: VisDrone2019-DET-val  # val images (relative to 'path')  548 images
-test: VisDrone2019-DET-test-dev
-# number of classes
-nc: 10
-
-# Classes
-names:
-  0: pedestrian
-  1: people
-  2: bicycle
-  3: car
-  4: van
-  5: truck
-  6: tricycle
-  7: awning-tricycle
-  8: bus
-  9: motor
 ```
 ## 7. Additional relevant details
 
