@@ -11,20 +11,21 @@ MSDC-DETR is an innovative model designed specifically for UAV image object dete
 
 ## 3. Usage Guide
 
-### 3.1 Install Dependencies
+### 3.1 Clone the code repository
+
+Clone the code repository:
+
+```python
+git clone https://github.com/13849446299/MSDC-DETR
+```
+You can also download the MSDC-DETR compressed package directly by clicking on "Code" and then selecting "Download ZIP."
+
+### 3.2 Install Dependencies
 
 To install the required dependencies, run:
 
 ```python
 pip install -r requirements.txt 
-```
-
-### 3.2 Install Dependencies
-
-Clone the code repository:
-
-```python
-git clone https://github.com/yourusername/yourrepository.git
 ```
 
 ### 3.3 Enter the code directory
