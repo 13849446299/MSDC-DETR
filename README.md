@@ -338,6 +338,10 @@ warmup_momentum:   0.8        # (float) warmup initial momentum
 warmup_bias_lr:    0.1        # (float) warmup initial bias lr
 optimizer:         AdamW      # (str) optimizer to use, choices=[SGD, Adam, Adamax, AdamW, NAdam, RAdam, RMSProp, auto]
 ```
+The DOI link for the code is:
 
+```bash
+https://zenodo.org/records/14358387
+```
 
 
