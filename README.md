@@ -354,5 +354,7 @@ The DOI link for the code is:
 ```bash
 https://zenodo.org/records/14358387
 ```
+The file fps.py is used to measure the model fps
 
+The folder heatmap is used to generate the heatmap of the model
 
