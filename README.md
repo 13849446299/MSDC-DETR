@@ -163,6 +163,8 @@ class MSCA(BaseModule):
         x = attn * u
         return x
 ```
+The complete code is in ultralytics/nn/Addmodules/dcnv2_addint.py
+
 ### 4.2 Adaptive Fusion Attention Module (AFAM)
 ![AFAM](https://github.com/user-attachments/assets/4cfbc8cd-0e71-49cf-8d0d-155a893cc112)
 
@@ -190,6 +192,7 @@ class ADown(nn.Module):
         x2 = self.cv2(x2)
         return torch.cat((x1, x2), 1)
 ```
+The complete code is in ultralytics/nn/Addmodules/ADown.py
 
 Exponential Moving Average (EMA) module diagram
 
@@ -226,6 +229,7 @@ class EMA(nn.Module):
         weights = (torch.matmul(x11, x12) + torch.matmul(x21, x22)).reshape(b * self.groups, 1, h, w)
         return (group_x * weights.sigmoid()).reshape(b, c, h, w)
 ```
+The complete code is in ultralytics/nn/Addmodules/EMAttention.py
 
 ## 5. Datasets
 
