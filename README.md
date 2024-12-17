@@ -38,7 +38,14 @@ Run the following command to start training the model:
 ```python
 python train.py --config ultralytics/cfg/models/my_models/r18_MSDC_AFAM.yaml --data dataset/VisDrone.yaml
 ```
-
+### 3.5 Evaluate Example
+```python
+python val.py --config ultralytics/cfg/models/my_models/r18_MSDC_AFAM.yaml --data dataset/VisDrone.yaml
+```
+### 3.6 Detec Example
+```python
+python Detec.py --config Your trained weight file address  --source Your picture address
+```
 ## 4. Key Algorithms
 ### 4.1 Multi-Scale Deformable Convolutions (MSDC)
 
